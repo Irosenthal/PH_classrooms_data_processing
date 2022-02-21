@@ -112,7 +112,7 @@ all_matched_data_for_paired_t_test <- left_join(matched_pre_long_subset, matched
   select(Q1.3_1, mean_score_pre, mean_score_post) %>%
   ungroup()
 
-t.test(all_matched_data_for_paired_t_test$mean_score_pre, 
+wilcox.test(all_matched_data_for_paired_t_test$mean_score_pre, 
        all_matched_data_for_paired_t_test$mean_score_post, paired = T)
 
 sd(all_matched_data_for_paired_t_test$mean_score_pre)
